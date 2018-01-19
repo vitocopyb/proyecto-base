@@ -1,0 +1,4 @@
+** CREAR COMPONENTES **
+ng g c common/components/adminGridmenu -is --spec=false --flat
+ng g c modulos/rol/components/adminRolListado -is --spec=false --flat
+
