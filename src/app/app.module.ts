@@ -16,6 +16,7 @@ import { AdmFooterComponent } from './common/components/adm-footer.component';
 import { AdmRolListadoComponent } from './modulos/rol/components/adm-rol-listado.component';
 import { AdmRolDetalleComponent } from './modulos/rol/components/adm-rol-detalle.component';
 import { PageNotFoundComponent } from './common/components/page-not-found.component';
+import { AdmPagesComponent } from './common/components/adm-pages.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { PageNotFoundComponent } from './common/components/page-not-found.compon
     AdmFooterComponent,
     AdmRolListadoComponent,
     AdmRolDetalleComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    AdmPagesComponent
   ],
   imports: [
     BrowserModule,
