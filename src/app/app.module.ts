@@ -4,38 +4,24 @@ import { NgModule } from '@angular/core';
 // Rutas
 import { APP_ROUTES } from './app.routes';
 
+// Modulos
+import { ComunModule } from './comun/comun.module';
+import { RolModule } from './modulos/rol/rol.module';
 
 // Componentes
 import { AppComponent } from './app.component';
 import { LoginComponent } from './modulos/login/login.component';
-import { AdmDashboardComponent } from './common/components/adm-dashboard.component';
-import { AdmSidebarComponent } from './common/components/adm-sidebar.component';
-import { AdmHeaderComponent } from './common/components/adm-header.component';
-import { AdmBreadcrumbsComponent } from './common/components/adm-breadcrumbs.component';
-import { AdmFooterComponent } from './common/components/adm-footer.component';
-import { AdmRolListadoComponent } from './modulos/rol/components/adm-rol-listado.component';
-import { AdmRolDetalleComponent } from './modulos/rol/components/adm-rol-detalle.component';
-import { PageNotFoundComponent } from './common/components/page-not-found.component';
-import { AdmPagesComponent } from './common/components/adm-pages.component';
-
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    AdmDashboardComponent,
-    AdmSidebarComponent,
-    AdmHeaderComponent,
-    AdmBreadcrumbsComponent,
-    AdmFooterComponent,
-    AdmRolListadoComponent,
-    AdmRolDetalleComponent,
-    PageNotFoundComponent,
-    AdmPagesComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,
-    APP_ROUTES
+    APP_ROUTES,
+    ComunModule,
+    RolModule
   ],
   providers: [],
   bootstrap: [AppComponent]
