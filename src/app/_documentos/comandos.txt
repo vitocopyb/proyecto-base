@@ -5,3 +5,5 @@ ng g c modulos/rol/components/adminRolListado -is --spec=false --flat
 ** CREAR MODULOS **
 ng g m comun/comun --flat --spec=false
 
+** CREAR COMPONENTE y ASIGNARLO EN UN MODULO ESPECIFICO **
+ng g c pages/accountSettings -m="pages/pages.module.ts" --spec=false -is

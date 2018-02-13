@@ -5,7 +5,7 @@
                 <ul class="site-menu" data-plugin="menu">
                     <!-- BEGIN MENU PERSONALIZADO -->
                     <li class="site-menu-category">Men&uacute;</li>
-                    <li class="site-menu-item has-sub">
+                    <li class="site-menu-item has-sub active open">
                         <a href="javascript:void(0)">
                             <i class="site-menu-icon wb-hammer" aria-hidden="true"></i>
                             <span class="site-menu-title">Sistema</span>
@@ -13,8 +13,18 @@
                         </a>
                         <ul class="site-menu-sub">
                             <li class="site-menu-item">
-                                <a class="animsition-link" href="../layouts/menu-collapsed.html">
+                                <a class="animsition-link" routerLink="/rol/adm-rol-listado">
                                     <span class="site-menu-title">Roles</span>
+                                </a>
+                            </li>
+                            <li class="site-menu-item">
+                                <a class="animsition-link" routerLink="/rol/adm-rol-detalle">
+                                    <span class="site-menu-title">Rol - Detalle</span>
+                                </a>
+                            </li>
+                            <li class="site-menu-item">
+                                <a class="animsition-link" routerLink="/">
+                                    <span class="site-menu-title">Dashboard</span>
                                 </a>
                             </li>
                         </ul>
@@ -160,7 +170,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="site-menu-item has-sub active open">
+                    <li class="site-menu-item has-sub">
                         <a href="javascript:void(0)">
                             <i class="site-menu-icon wb-file" aria-hidden="true"></i>
                             <span class="site-menu-title">Pages</span>
