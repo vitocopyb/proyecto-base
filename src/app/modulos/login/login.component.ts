@@ -1,4 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Router } from '@angular/router';
+
+declare function init_plugins();
 
 @Component({
     selector: 'app-login',
@@ -7,24 +10,25 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 })
 export class LoginComponent implements OnInit, OnDestroy {
 
-    constructor() { }
+    cssLogin: any = document.getElementById('cssLogin');
+
+    constructor( public router: Router ) { }
 
     ngOnInit() {
-        // agrega hoja de estilo
-        document.getElementById('cssLogin').setAttribute('href', 'assets/global/css/login-v2.min.css');
+        init_plugins();
 
-        // agrega clases en el tag body
-        const body = document.getElementsByTagName('body')[0];
-        body.classList.add('page-login-v2', 'layout-full', 'page-dark');
+        // agrega hoja de estilo
+        // document.getElementById('cssLogin').setAttribute('href', 'assets/css/pages/login-register-lock.css');
+        this.cssLogin.setAttribute('href', 'assets/css/pages/login-register-lock.css');
     }
 
     ngOnDestroy() {
         // elimina la hoja de estilo
-        document.getElementById('cssLogin').setAttribute('href', '');
-
-        // quita las clases del body
-        const body = document.getElementsByTagName('body')[0];
-        body.classList.remove('page-login-v2', 'layout-full', 'page-dark');
+        this.cssLogin.setAttribute('href', '');
     }
 
+    ingresar() {
+        this.router.navigate(['/adm-dashboard']);
+    }
+    
 }

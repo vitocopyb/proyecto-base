@@ -1,15 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 
+declare function init_plugins();
+
 @Component({
-  selector: 'app-adm-pages',
-  templateUrl: './adm-pages.component.html',
-  styles: []
+    selector: 'app-adm-pages',
+    templateUrl: './adm-pages.component.html',
+    styles: []
 })
 export class AdmPagesComponent implements OnInit {
 
-  constructor() { }
+    constructor() { }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+        init_plugins();
+    }
 
 }

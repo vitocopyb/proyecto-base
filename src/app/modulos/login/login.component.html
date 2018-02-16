@@ -1,65 +1,69 @@
-<!-- ================================================= -->
-<!-- BEGIN Login -->
-<!-- ================================================= -->
-<div class="page" data-animsition-in="fade-in" data-animsition-out="fade-out">
-    <div class="page-content">
-        <div class="page-brand-info">
-            <div class="brand">
-                <img class="brand-img" src="assets/images/logo@2x.png" alt="...">
-                <h2 class="brand-text font-size-40">Remark</h2>
-            </div>
-            <p class="font-size-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        </div>
-
-        <div class="page-login-main animation-slide-right animation-duration-1">
-            <div class="brand hidden-md-up">
-                <img class="brand-img" src="assets/images/logo-blue@2x.png" alt="...">
-                <h3 class="brand-text font-size-40">Remark</h3>
-            </div>
-            <h3 class="font-size-24">Sign In</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-
-            <form method="post" action="login-v2.html">
-                <div class="form-group">
-                    <label class="sr-only" for="inputEmail">Email</label>
-                    <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Email">
-                </div>
-                <div class="form-group">
-                    <label class="sr-only" for="inputPassword">Password</label>
-                    <input type="password" class="form-control" id="inputPassword" name="password" placeholder="Password">
-                </div>
-                <div class="form-group clearfix">
-                    <div class="checkbox-custom checkbox-inline checkbox-primary float-left">
-                        <input type="checkbox" id="rememberMe" name="rememberMe">
-                        <label for="rememberMe">Remember me</label>
+<!-- ============================================================== -->
+<!-- Main wrapper - style you can find in pages.scss -->
+<!-- ============================================================== -->
+<section id="wrapper" class="login-register login-sidebar" style="background-image:url(../assets/images/background/login-register.jpg);">
+    <div class="login-box card">
+        <div class="card-body">
+            <form class="form-horizontal form-material" (ngSubmit)="ingresar()">
+                <a href="javascript:void(0)" class="text-center db"><img src="../assets/images/logo-icon.png" alt="Home" /><br/><img src="../assets/images/logo-text.png" alt="Home" /></a>
+                <div class="form-group m-t-40">
+                    <div class="col-xs-12">
+                        <input class="form-control" type="text" required="" placeholder="Usuario">
                     </div>
-                    <a class="float-right" href="forgot-password.html">Forgot password?</a>
                 </div>
-                <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                <div class="form-group">
+                    <div class="col-xs-12">
+                        <input class="form-control" type="password" required="" placeholder="Contraseña">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-12">
+                        <div class="checkbox checkbox-primary pull-left p-t-0">
+                            <input id="checkbox-signup" type="checkbox" class="filled-in chk-col-light-blue">
+                            <label for="checkbox-signup"> Recu&eacute;rdame </label>
+                        </div>
+                        <a href="javascript:void(0)" id="to-recover" class="text-dark pull-right"><i class="fa fa-lock m-r-5"></i> ¿Olvid&eacute; contraseña?</a> </div>
+                </div>
+                <div class="form-group text-center m-t-20">
+                    <div class="col-xs-12">
+                        <button class="btn btn-info btn-lg btn-block text-uppercase btn-rounded" type="submit">Ingresar</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 m-t-10 text-center">
+                        <div class="social">
+                            <a href="javascript:void(0)" class="btn  btn-facebook" data-toggle="tooltip" title="Login with Facebook"> <i aria-hidden="true" class="fa fa-facebook"></i> </a>
+                            <a href="javascript:void(0)" class="btn btn-googleplus" data-toggle="tooltip" title="Login with Google"> <i aria-hidden="true" class="fa fa-google-plus"></i> </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group m-b-0">
+                    <div class="col-sm-12 text-center">
+                        ¿No tienes cuenta? <a href="pages-register2.html" class="text-primary m-l-5"><b>Crear cuenta</b></a>
+                    </div>
+                </div>
             </form>
-
-            <p>No account? <a href="register-v2.html">Sign Up</a></p>
-
-            <footer class="page-copyright">
-                <p>WEBSITE BY amazingSurge</p>
-                <p>© 2018. All RIGHT RESERVED.</p>
-                <div class="social">
-                    <a class="btn btn-icon btn-round social-twitter mx-5" href="javascript:void(0)">
-                        <i class="icon bd-twitter" aria-hidden="true"></i>
-                    </a>
-                    <a class="btn btn-icon btn-round social-facebook mx-5" href="javascript:void(0)">
-                        <i class="icon bd-facebook" aria-hidden="true"></i>
-                    </a>
-                    <a class="btn btn-icon btn-round social-google-plus mx-5" href="javascript:void(0)">
-                        <i class="icon bd-google-plus" aria-hidden="true"></i>
-                    </a>
+            <form class="form-horizontal" id="recoverform" action="index.html">
+                <div class="form-group ">
+                    <div class="col-xs-12">
+                        <h3>Recuperar contraseña</h3>
+                        <p class="text-muted">Escriba su correo electrónico y siga los pasos </p>
+                    </div>
                 </div>
-            </footer>
+                <div class="form-group ">
+                    <div class="col-xs-12">
+                        <input class="form-control" type="text" required="" placeholder="Email">
+                    </div>
+                </div>
+                <div class="form-group text-center m-t-20">
+                    <div class="col-xs-12">
+                        <button class="btn btn-primary btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">Reset</button>
+                    </div>
+                </div>
+            </form>
         </div>
-
     </div>
-</div>
-
-<!-- ================================================= -->
-<!-- END Login -->
-<!-- ================================================= -->
+</section>
+<!-- ============================================================== -->
+<!-- End Wrapper -->
+<!-- ============================================================== -->

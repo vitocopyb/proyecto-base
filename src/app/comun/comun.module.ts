@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 // Rutas
 import { COMUN_ROUTES } from './comun.routes';
 
 // Servicios
 import { ScriptLoaderService } from './services/script-loader.service';
+import { SidebarService } from './services/sidebar.service';
 
 // Componentes
 import { AdmPagesComponent } from './components/adm-pages.component';
@@ -28,6 +30,7 @@ import { PageNotFoundComponent } from './components/page-not-found.component';
     ],
     imports: [
         CommonModule,
+        RouterModule,
         COMUN_ROUTES
     ],
     // export se utiliza para exponer los modulos que se pueden utilizar desde otro lado que no sea dentro de RolModule
@@ -40,7 +43,8 @@ import { PageNotFoundComponent } from './components/page-not-found.component';
         PageNotFoundComponent
     ],
     providers: [
-        ScriptLoaderService
+        ScriptLoaderService,
+        SidebarService
     ]
 })
 export class ComunModule { }
