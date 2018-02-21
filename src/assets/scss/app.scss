@@ -19,7 +19,9 @@ File: scss
  *  8. Custom Templates
  */
 
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700');
+
+/* @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700'); */
+
 
 /******************* 
 Global Styles 
@@ -27,7 +29,6 @@ Global Styles
 
 * {
     outline: none;
-    
 }
 
 body {
@@ -37,7 +38,6 @@ body {
     overflow-x: hidden;
     color: $bodytext;
     font-weight: 300;
-    
 }
 
 html {
@@ -45,7 +45,7 @@ html {
     min-height: 100%;
     background: $white;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale; 
+    -moz-osx-font-smoothing: grayscale;
 }
 
 a:hover,
@@ -360,9 +360,11 @@ Opacity
 .op-5 {
     opacity: 0.5;
 }
+
 .op-3 {
     opacity: 0.3;
 }
+
 
 /*******************
 font weight
@@ -763,7 +765,7 @@ Labels
 
 .badge-warning {
     background-color: $warning;
-    color:$white;
+    color: $white;
 }
 
 .badge-danger {
@@ -851,7 +853,11 @@ Layouts
 
 
 /*******************/
+
+
 /*single column*/
+
+
 /*******************/
 
 .single-column {

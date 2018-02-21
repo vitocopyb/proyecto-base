@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 // todo **
 import { ScriptLoaderService } from '../../../comun/services/script-loader.service';
+import { RolService } from '../services/rol.service';
+import { Rol } from '../interfaces/rol.interface';
 
 @Component({
     selector: 'app-adm-rol-detalle',
@@ -10,7 +12,15 @@ import { ScriptLoaderService } from '../../../comun/services/script-loader.servi
 })
 export class AdmRolDetalleComponent implements OnInit {
 
-    constructor( private _scriptLoader: ScriptLoaderService ) { }
+    titulo: string = 'Nuevo Rol';
+    idRegistro: string = '';
+    rol: Rol = {
+        idRol: -1,
+        nombre: '',
+        llave: ''
+    };
+
+    constructor( private _scriptLoader: ScriptLoaderService, private _rolService: RolService ) { }
 
     ngOnInit() {
         this._scriptLoader
@@ -18,6 +28,16 @@ export class AdmRolDetalleComponent implements OnInit {
                 console.log('script loaded ', data);
             })
             .catch(error => console.log(error));
+
+        // obtiene detalle del rol
+        this.rol = this._rolService.obtenerDetalleRol(1);
+
+        // cambia el titulo
+        if (this.rol.idRol !== -1) {
+            this.titulo = this.rol.nombre;
+            this.idRegistro = `(id: ${this.rol.idRol})`;
+        }
+
     }
 
 }

@@ -8,7 +8,7 @@ const usuarioRoutes: Routes = [
         path: 'usuario',
         component: AdmPagesComponent,
         children: [
-            { path: 'adm-usuario-configuracion', component: AdmUsuarioConfiguracionComponent }
+            { path: 'adm-usuario-configuracion', component: AdmUsuarioConfiguracionComponent, data: { titulo: 'Configuración' } }
         ]
     }
 ];

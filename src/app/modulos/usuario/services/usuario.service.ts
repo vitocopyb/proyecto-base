@@ -7,7 +7,7 @@ export class UsuarioService {
     KEY_STORAGE_CONFIGURACION: string = 'configuracion';
 
     configuracion: IConfiguracion = {
-        tema: 'green-dark',
+        tema: 'blue-dark',
         temaUrl: 'assets/css/colors/'
     }
 

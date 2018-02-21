@@ -65,9 +65,8 @@ File: scss
  */
 
 
-/* TODO *** DESCARGAR FUENTE PARA QUE QUEDE EN FORMA LOCAL */
+/* @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700"); */
 
-@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700");
 
 /******************* 
 Global Styles 
@@ -88,7 +87,7 @@ Global Styles
 
 body {
     background: #fff;
-    font-family: "Montserrat", sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     overflow-x: hidden;
     color: #67757c;
@@ -144,7 +143,7 @@ h4,
 h5,
 h6 {
     color: #455a64;
-    font-family: "Montserrat", sans-serif;
+    font-family: Arial, sans-serif;
     font-weight: 400;
 }
 

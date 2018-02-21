@@ -8,10 +8,11 @@ const comunRoutes: Routes = [
         path: '',
         component: AdmPagesComponent,
         children: [
-            { path: 'adm-dashboard', component: AdmDashboardComponent },
+            { path: 'adm-dashboard', component: AdmDashboardComponent, data: { titulo: 'Dashboard' } },
             { path: '', redirectTo: '/adm-dashboard', pathMatch: 'full'}
         ]
     }
+    
 ];
 
 export const COMUN_ROUTES = RouterModule.forChild( comunRoutes );

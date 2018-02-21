@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import 'rxjs/add/operator/filter';
+import 'rxjs/add/operator/map'
 
 // temporal
 import { FormsModule } from '@angular/forms';

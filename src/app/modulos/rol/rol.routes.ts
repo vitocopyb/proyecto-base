@@ -9,8 +9,8 @@ const rolRoutes: Routes = [
         path: 'rol',
         component: AdmPagesComponent,
         children: [
-            { path: 'adm-rol-listado', component: AdmRolListadoComponent },
-            { path: 'adm-rol-detalle', component: AdmRolDetalleComponent }
+            { path: 'adm-rol-listado', component: AdmRolListadoComponent, data: { titulo: 'Roles' } },
+            { path: 'adm-rol-detalle', component: AdmRolDetalleComponent, data: { titulo: 'Rol Detalle' } }
         ]
     }
 ];
