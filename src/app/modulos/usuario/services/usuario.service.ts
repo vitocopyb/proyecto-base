@@ -1,31 +1,44 @@
 import { Injectable, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
-import { IConfiguracion } from '../interfaces/usuario.interface';
+import { IConfiguracion, IUsuario } from '../interfaces/usuario.interface';
+import { Constantes } from '../../../comun/utilities/constantes';
 
 @Injectable()
 export class UsuarioService {
-    KEY_STORAGE_CONFIGURACION: string = 'configuracion';
 
     configuracion: IConfiguracion = {
-        tema: 'blue-dark',
-        temaUrl: 'assets/css/colors/'
+        tema: this._constantes.TEMA_COLOR_DEFAULT,
+        temaUrl: this._constantes.TEMA_URL
     }
 
-    constructor( @Inject(DOCUMENT) private _document ) {
+    private listadoUsuarios: IUsuario[] = [
+        { idUsuario: 1, idRol: 1, nombre: 'Nombre Usuario 1', paterno: 'Paterno', materno: 'Materno', username: 'username', password: 'xyz', tipoIdentificacion: 'RUT', identificacion: '123-6', telefono: '987654321', email: 'test@vsr.cl', activo: true },
+        { idUsuario: 2, idRol: 1, nombre: 'Nombre Usuario 2', paterno: 'Paterno', materno: 'Materno', username: 'username', password: 'xyz', tipoIdentificacion: 'RUT', identificacion: '123-6', telefono: '987654321', email: 'test@vsr.cl', activo: true },
+        { idUsuario: 3, idRol: 1, nombre: 'Nombre Usuario 3', paterno: 'Paterno', materno: 'Materno', username: 'username', password: 'xyz', tipoIdentificacion: 'RUT', identificacion: '123-6', telefono: '987654321', email: 'test@vsr.cl', activo: true },
+        { idUsuario: 4, idRol: 1, nombre: 'Nombre Usuario 4', paterno: 'Paterno', materno: 'Materno', username: 'username', password: 'xyz', tipoIdentificacion: 'RUT', identificacion: '123-6', telefono: '987654321', email: 'test@vsr.cl', activo: true },
+        { idUsuario: 5, idRol: 1, nombre: 'Nombre Usuario 5', paterno: 'Paterno', materno: 'Materno', username: 'username', password: 'xyz', tipoIdentificacion: 'RUT', identificacion: '123-6', telefono: '987654321', email: 'test@vsr.cl', activo: true },
+        { idUsuario: 6, idRol: 1, nombre: 'Nombre Usuario 6', paterno: 'Paterno', materno: 'Materno', username: 'username', password: 'xyz', tipoIdentificacion: 'RUT', identificacion: '123-6', telefono: '987654321', email: 'test@vsr.cl', activo: true },
+        { idUsuario: 7, idRol: 1, nombre: 'Nombre Usuario 7', paterno: 'Paterno', materno: 'Materno', username: 'username', password: 'xyz', tipoIdentificacion: 'RUT', identificacion: '123-6', telefono: '987654321', email: 'test@vsr.cl', activo: true },
+        { idUsuario: 8, idRol: 1, nombre: 'Nombre Usuario 8', paterno: 'Paterno', materno: 'Materno', username: 'username', password: 'xyz', tipoIdentificacion: 'RUT', identificacion: '123-6', telefono: '987654321', email: 'test@vsr.cl', activo: true },
+        { idUsuario: 9, idRol: 1, nombre: 'Nombre Usuario 9', paterno: 'Paterno', materno: 'Materno', username: 'username', password: 'xyz', tipoIdentificacion: 'RUT', identificacion: '123-6', telefono: '987654321', email: 'test@vsr.cl', activo: true },
+        { idUsuario: 10, idRol: 1, nombre: 'Nombre Usuario 10', paterno: 'Paterno', materno: 'Materno', username: 'username', password: 'xyz', tipoIdentificacion: 'RUT', identificacion: '123-6', telefono: '987654321', email: 'test@vsr.cl', activo: true }
+    ];
+
+    constructor( @Inject(DOCUMENT) private _document, private _constantes: Constantes ) {
         this.cargarTema();
     }
 
     cargarTema() {
-        if ( localStorage.getItem(this.KEY_STORAGE_CONFIGURACION) ) {
-            this.configuracion = JSON.parse( localStorage.getItem(this.KEY_STORAGE_CONFIGURACION) );
+        if ( localStorage.getItem(this._constantes.KEY_STORAGE_CONFIGURACION) ) {
+            this.configuracion = JSON.parse( localStorage.getItem(this._constantes.KEY_STORAGE_CONFIGURACION) );
         }
 
         this.aplicarTema( this.configuracion.tema );
     }
 
     aplicarTema( tema: string ) {
-        const url = `${ this.configuracion.temaUrl }${ tema }.css`;
-        this._document.getElementById('cssTema').setAttribute('href', url);
+        const paterno = `${ this.configuracion.temaUrl }${ tema }.css`;
+        this._document.getElementById('cssTema').setAttribute('href', paterno);
 
         // guarda los datos en el servicio
         this.configuracion.tema = tema;
@@ -33,7 +46,15 @@ export class UsuarioService {
     }
 
     guardarTema() {
-        localStorage.setItem(this.KEY_STORAGE_CONFIGURACION, JSON.stringify( this.configuracion ));
+        localStorage.setItem(this._constantes.KEY_STORAGE_CONFIGURACION, JSON.stringify( this.configuracion ));
+    }
+
+    obtenerUsuarios(): IUsuario[] {
+        return this.listadoUsuarios;
+    }
+
+    obtenerDetalleUsuario(idUsuario: number): IUsuario {
+        return this.listadoUsuarios[0];
     }
 
 }

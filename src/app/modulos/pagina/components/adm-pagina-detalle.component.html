@@ -11,16 +11,16 @@
                                 <div class="form-group row">
                                     <label class="control-label text-md-right col-md-2">Nombre</label>
                                     <div class="col-md-10">
-                                        <input #txtNombre type="text" name="nombre" class="form-control" placeholder="escriba un nombre" [(ngModel)]="rol.nombre">
+                                        <input #txtNombre type="text" name="nombre" class="form-control" placeholder="escriba un nombre" [(ngModel)]="pagina.nombre">
                                         <small class="form-control-feedback">&nbsp;</small>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-group row">
-                                    <label class="control-label text-md-right col-md-2">Llave</label>
+                                    <label class="control-label text-md-right col-md-2">Url</label>
                                     <div class="col-md-10">
-                                        <input #txtLlave type="text" name="llave" class="form-control" placeholder="escriba una llave" [(ngModel)]="rol.llave">
+                                        <input #txtUrl type="text" name="url" class="form-control" placeholder="escriba una llave" [(ngModel)]="pagina.url">
                                         <small class="form-control-feedback">&nbsp;</small>
                                     </div>
                                 </div>
@@ -31,8 +31,8 @@
                     <div class="form-actions text-right">
                         <div class="row">
                             <div class="col-12">
-                                <button type="button" class="btn btn-secondary" [routerLink]="['/rol/adm-rol-listado']"> <i class="fa fa-times"></i> Cancelar</button>
-                                <button type="submit" class="btn btn-success font-weight-bold" [routerLink]="['/rol/adm-rol-listado']"> <i class="fa fa-save"></i> Guardar</button>
+                                <button type="button" class="btn btn-secondary" [routerLink]="['/pagina/adm-pagina-listado']"> <i class="fa fa-times"></i> Cancelar</button>
+                                <button type="submit" class="btn btn-success font-weight-bold" [routerLink]="['/pagina/adm-pagina-listado']"> <i class="fa fa-save"></i> Guardar</button>
                             </div>
                         </div>
                     </div>

@@ -36,24 +36,24 @@
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">Resultado de la b&uacute;squeda</h4>
-                <h6 class="card-subtitle">Total de registros: {{ listadoRoles.length }}</h6>
+                <h6 class="card-subtitle">Total de registros: {{ listadoUsuarios.length }}</h6>
                 <div class="table-responsive m-t-20">
                     <table id="myTable" class="table table-bordered table-striped">
                         <thead>
                             <tr>
-                                <th>IdRol</th>
+                                <th>IdUsuario</th>
                                 <th>Nombre</th>
-                                <th>Llave</th>
+                                <th>Activo</th>
                                 <th class="text-center">Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let rol of listadoRoles">
-                                <td>{{ rol.idRol }}</td>
-                                <td>{{ rol.llave }}</td>
-                                <td>{{ rol.nombre }}</td>
+                            <tr *ngFor="let usuario of listadoUsuarios">
+                                <td>{{ usuario.idUsuario }}</td>
+                                <td>{{ usuario.nombre }}</td>
+                                <td>{{ usuario.activo }}</td>
                                 <td class="text-nowrap text-center">
-                                    <button type="button" class="btn btn-success btn-sm" [routerLink]="['/rol/adm-rol-detalle']"><i class="fa fa-pencil"></i> Editar</button>
+                                    <button type="button" class="btn btn-success btn-sm" [routerLink]="['/usuario/adm-usuario-detalle']"><i class="fa fa-pencil"></i> Editar</button>
                                     <button type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i> Eliminar</button>
                                 </td>
                             </tr>
@@ -62,8 +62,9 @@
                 </div>
 
                 <div class="text-right">
-                    <button type="button" class="btn btn-success" [routerLink]="['/rol/adm-rol-detalle']"> <i class="fa fa-plus"></i> Nuevo</button>
+                    <button type="button" class="btn btn-success" [routerLink]="['/usuario/adm-usuario-detalle']"> <i class="fa fa-plus"></i> Nuevo</button>
                 </div>
+
             </div>
         </div>
     </div>

@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Rol } from '../interfaces/rol.interface';
+import { IRol } from '../interfaces/rol.interface';
 
 @Injectable()
 export class RolService {
 
-    private listadoRoles: Rol[] = [
+    private listadoRoles: IRol[] = [
         { idRol: 1, nombre: 'Administrador de Sistemas', llave: 'ADM'},
         { idRol: 2, nombre: 'Genérico', llave: 'GEN'},
         { idRol: 3, nombre: 'Cliente', llave: 'CLI'},
@@ -12,11 +12,11 @@ export class RolService {
 
     constructor() { }
 
-    obtenerRoles(): Rol[] {
+    obtenerRoles(): IRol[] {
         return this.listadoRoles;
     }
 
-    obtenerDetalleRol(idRol: number): Rol {
+    obtenerDetalleRol(idRol: number): IRol {
         return this.listadoRoles[0];
     }
     

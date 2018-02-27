@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 // todo **
 import { ScriptLoaderService } from '../../../comun/services/script-loader.service';
+import { IRol } from '../interfaces/rol.interface';
 import { RolService } from '../services/rol.service';
-import { Rol } from '../interfaces/rol.interface';
 
 @Component({
     selector: 'app-adm-rol-detalle',
@@ -14,7 +14,7 @@ export class AdmRolDetalleComponent implements OnInit {
 
     titulo: string = 'Nuevo Rol';
     idRegistro: string = '';
-    rol: Rol = {
+    rol: IRol = {
         idRol: -1,
         nombre: '',
         llave: ''
@@ -29,7 +29,7 @@ export class AdmRolDetalleComponent implements OnInit {
             })
             .catch(error => console.log(error));
 
-        // obtiene detalle del rol
+        // obtiene detalle
         this.rol = this._rolService.obtenerDetalleRol(1);
 
         // cambia el titulo
@@ -37,7 +37,6 @@ export class AdmRolDetalleComponent implements OnInit {
             this.titulo = this.rol.nombre;
             this.idRegistro = `(id: ${this.rol.idRol})`;
         }
-
     }
 
 }

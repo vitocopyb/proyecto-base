@@ -1,9 +1,8 @@
-import { Component, OnInit, OnDestroy } from '@angular/core'; // todo *** Inject
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
-// todo ***
 import { ScriptLoaderService } from '../../../comun/services/script-loader.service';
+import { IRol } from '../interfaces/rol.interface';
 import { RolService } from '../services/rol.service';
-import { Rol } from '../interfaces/rol.interface';
 
 @Component({
     selector: 'app-adm-rol-listado',
@@ -12,7 +11,7 @@ import { Rol } from '../interfaces/rol.interface';
 })
 export class AdmRolListadoComponent implements OnInit, OnDestroy {
 
-    listadoRoles: Rol[] = [];
+    listadoRoles: IRol[] = [];
     
     constructor( private _scriptLoader: ScriptLoaderService, private _rolService: RolService ) { }
 
@@ -23,7 +22,7 @@ export class AdmRolListadoComponent implements OnInit, OnDestroy {
             })
             .catch(error => console.log(error));
 
-        // obtiene listado de roles
+        // obtiene listado
         this.listadoRoles = this._rolService.obtenerRoles();
     }
 
