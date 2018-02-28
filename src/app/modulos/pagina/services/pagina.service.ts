@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IPagina } from '../interfaces/pagina.interface';
+import { IPagina, IPaginaCategoria } from '../interfaces/pagina.interface';
 
 @Injectable()
 export class PaginaService {
@@ -17,6 +17,12 @@ export class PaginaService {
         { idPagina: 10, idPaginaCategoria: 1, nombre: 'Nombre Pagina 10', url: '/path/nombre-componente', mostrarEnMenu: true, orden: 10, activo: true, idPaginaPadre: -1 }
     ];
 
+    private listadoCategorias: IPaginaCategoria[] = [
+        { idPaginaCategoria: 1, nombre: 'Sistema', orden: 1, activo: true },
+        { idPaginaCategoria: 2, nombre: 'Reportes', orden: 2, activo: true },
+        { idPaginaCategoria: 3, nombre: 'Estadísticas', orden: 3, activo: true }
+    ];
+
     constructor() { }
 
     obtenerPaginas(): IPagina[] {
@@ -25,6 +31,14 @@ export class PaginaService {
 
     obtenerDetallePagina(idPagina: number): IPagina {
         return this.listadoPaginas[0];
+    }
+
+    obtenerCategorias(): IPaginaCategoria[] {
+        return this.listadoCategorias;
+    }
+
+    obtenerDetalleCategoria(idPaginaCategoria: number): IPaginaCategoria {
+        return this.listadoCategorias[0];
     }
     
 }

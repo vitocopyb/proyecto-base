@@ -35,7 +35,7 @@ export class AdmUsuarioDetalleComponent implements OnInit {
         // cambia el titulo
         if (this.usuario.idUsuario !== -1) {
             this.titulo = this.usuario.nombre;
-            this.idRegistro = `(id: ${this.usuario.idUsuario})`;
+            this.idRegistro = `(ID: ${this.usuario.idUsuario})`;
         }
     }
 

@@ -8,3 +8,10 @@ export interface IPagina {
     activo: boolean;
     idPaginaPadre: number;
 }
+
+export interface IPaginaCategoria {
+    idPaginaCategoria: number;
+    nombre: string;
+    orden: number;
+    activo: boolean;
+}

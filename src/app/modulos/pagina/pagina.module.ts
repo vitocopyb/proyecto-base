@@ -11,6 +11,8 @@ import { PaginaService } from './services/pagina.service';
 // Componentes
 import { AdmPaginaListadoComponent } from './components/adm-pagina-listado.component';
 import { AdmPaginaDetalleComponent } from './components/adm-pagina-detalle.component';
+import { AdmPaginaCategoriaListadoComponent } from './components/adm-pagina-categoria-listado.component';
+import { AdmPaginaCategoriaDetalleComponent } from './components/adm-pagina-categoria-detalle.component';
 
 @NgModule({
     imports: [
@@ -20,7 +22,9 @@ import { AdmPaginaDetalleComponent } from './components/adm-pagina-detalle.compo
     ],
     declarations: [
         AdmPaginaListadoComponent,
-        AdmPaginaDetalleComponent
+        AdmPaginaDetalleComponent,
+        AdmPaginaCategoriaListadoComponent,
+        AdmPaginaCategoriaDetalleComponent
     ],
     // export se utiliza para exponer los modulos que se pueden utilizar desde otro lado que no sea dentro de RolModule
     exports: [],

@@ -35,7 +35,7 @@ export class AdmRolDetalleComponent implements OnInit {
         // cambia el titulo
         if (this.rol.idRol !== -1) {
             this.titulo = this.rol.nombre;
-            this.idRegistro = `(id: ${this.rol.idRol})`;
+            this.idRegistro = `(ID: ${this.rol.idRol})`;
         }
     }
 

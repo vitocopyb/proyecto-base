@@ -2,7 +2,8 @@
     <div class="col-lg-12">
         <div class="card">
             <div class="card-body">
-                <h3 class="card-title">{{ titulo }} <small>{{ idRegistro }}</small></h3>
+                <h3 class="card-title">{{ titulo }} <small>{{ idRegistro }}</small>
+                </h3>
                 <form action="#" class="form-horizontal">
                     <div class="form-body">
                         <hr class="m-t-0 m-b-40">
@@ -11,16 +12,16 @@
                                 <div class="row">
                                     <label class="control-label text-md-right col-md-2">Nombre</label>
                                     <div class="col-md-10">
-                                        <input #txtNombre type="text" name="nombre" class="form-control" placeholder="escriba un nombre" [(ngModel)]="usuario.nombre">
+                                        <input #txtNombre type="text" name="nombre" class="form-control" placeholder="escriba un nombre" [(ngModel)]="categoria.nombre">
                                         <small class="form-control-feedback">&nbsp;</small>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="row">
-                                    <label class="control-label text-md-right col-md-2">Paterno</label>
+                                    <label class="control-label text-md-right col-md-2">Orden</label>
                                     <div class="col-md-10">
-                                        <input #txtPaterno type="text" name="paterno" class="form-control" placeholder="escriba una llave" [(ngModel)]="usuario.paterno">
+                                        <input #txtOrden type="text" name="orden" class="form-control" placeholder="escriba un orden" [(ngModel)]="categoria.orden">
                                         <small class="form-control-feedback">&nbsp;</small>
                                     </div>
                                 </div>
@@ -31,8 +32,8 @@
                     <div class="form-actions text-right">
                         <div class="row">
                             <div class="col-12">
-                                <button type="button" class="btn btn-secondary" [routerLink]="['/usuario/adm-usuario-listado']"> <i class="fa fa-times"></i> Cancelar</button>
-                                <button type="submit" class="btn btn-success font-weight-bold" [routerLink]="['/usuario/adm-usuario-listado']"> <i class="fa fa-save"></i> Guardar</button>
+                                <button type="button" class="btn btn-secondary" [routerLink]="['/pagina/adm-pagina-categoria-listado']"> <i class="fa fa-times"></i> Cancelar</button>
+                                <button type="submit" class="btn btn-success font-weight-bold" [routerLink]="['/pagina/adm-pagina-categoria-listado']"> <i class="fa fa-save"></i> Guardar</button>
                             </div>
                         </div>
                     </div>

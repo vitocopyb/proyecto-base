@@ -31,7 +31,7 @@ export class AdmPaginaDetalleComponent implements OnInit {
         // cambia el titulo
         if (this.pagina.idPagina !== -1) {
             this.titulo = this.pagina.nombre;
-            this.idRegistro = `(id: ${this.pagina.idPagina})`;
+            this.idRegistro = `(ID: ${this.pagina.idPagina})`;
         }
     }
 
