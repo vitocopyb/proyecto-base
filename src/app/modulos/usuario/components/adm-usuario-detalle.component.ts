@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IUsuario } from '../interfaces/usuario.interface';
 import { UsuarioService } from '../services/usuario.service';
+import { IPagina } from '../../pagina/interfaces/pagina.interface';
 
 @Component({
     selector: 'app-adm-usuario-detalle',
@@ -25,12 +26,17 @@ export class AdmUsuarioDetalleComponent implements OnInit {
         email: '',
         activo: true
     };
+    
+    permisos: any = [];
 
     constructor( private _usuarioService: UsuarioService ) { }
 
     ngOnInit() {
         // obtiene detalle
         this.usuario = this._usuarioService.obtenerDetalleUsuario(1);
+
+        // obtiene permisos
+        this.permisos = this._usuarioService.obtenerPermisos();
 
         // cambia el titulo
         if (this.usuario.idUsuario !== -1) {

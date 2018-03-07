@@ -1,40 +1,178 @@
 <div class="row">
-    <div class="col-lg-12">
+    <div class="col-12">
         <div class="card">
             <div class="card-body">
-                <h3 class="card-title">{{ titulo }} <small>{{ idRegistro }}</small></h3>
+                <h3 class="card-title"><span class="lstick"></span>{{ titulo }} <small>{{ idRegistro }}</small></h3>
                 <form action="#" class="form-horizontal">
                     <div class="form-body">
+                        <hr class="m-t-0 m-b-20">
+
+                        <div class="form-group row">
+                            <label class="control-label text-md-right col-md-2">Nombre</label>
+                            <div class="col-md-10">
+                                <input #txtNombre type="text" name="nombre" class="form-control" placeholder="escriba un nombre" [(ngModel)]="pagina.nombre">
+                                <small class="form-control-feedback">asda dasd</small>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="control-label text-md-right col-md-2">Url</label>
+                            <div class="col-md-10">
+                                <input #txtUrl type="text" name="url" class="form-control" placeholder="escriba una llave" [(ngModel)]="pagina.url">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="control-label text-md-right col-md-2">Categor&iacute;a</label>
+                            <div class="col-md-10">
+                                <select class="form-control custom-select">
+                                    <option value="">Male</option>
+                                    <option value="">Female</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="control-label text-md-right col-md-2">Orden</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" placeholder="ingrese un orden">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="control-label text-md-right col-md-2">P&aacute;gina padre</label>
+                            <div class="col-md-10">
+                                <select class="form-control custom-select">
+                                    <option value="">Ninguno</option>
+                                    <optgroup label="Nombre Categoría">
+                                        <option value="">Pagina 1</option>
+                                        <option value="">---- Pagina 1.1</option>
+                                        <option value="">-------- Pagina 1.1.1</option>
+                                        <option value="">-------- Pagina 1.1.2</option>
+                                        <option value="">---- Pagina 1.2</option>
+                                        <option value="">Pagina 2</option>
+                                        <option value="">---- Pagina 2.1</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="control-label text-md-right col-md-2">Mostar en men&uacute;</label>
+                            <div class="col-md-10">
+                                <div class="switch">
+                                    <label>
+                                        NO
+                                        <input type="checkbox" id="chkbox35">
+                                        <span class="lever switch-col-teal"></span>
+                                        SI
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="control-label text-md-right col-md-2">Activo</label>
+                            <div class="col-md-10">
+                                <div class="switch">
+                                    <label>
+                                        NO
+                                        <input type="checkbox" id="chkbox35" checked="checked">
+                                        <span class="lever switch-col-teal"></span>
+                                        SI
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="control-label text-md-right col-md-2">Roles asignados</label>
+                            <div class="col-md-10">
+                                <select class="form-control select2 select2-multiple" multiple="multiple" data-placeholder="Choose">
+                                    <optgroup label="Alaskan/Hawaiian Time Zone">
+                                        <option value="AK">Alaska</option>
+                                        <option value="HI">Hawaii</option>
+                                    </optgroup>
+                                    <optgroup label="Pacific Time Zone">
+                                        <option value="CA">California</option>
+                                        <option value="NV">Nevada</option>
+                                        <option value="OR">Oregon</option>
+                                        <option value="WA">Washington</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                        </div>
+
                         <hr class="m-t-0 m-b-40">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="row">
-                                    <label class="control-label text-md-right col-md-2">Nombre</label>
-                                    <div class="col-md-10">
-                                        <input #txtNombre type="text" name="nombre" class="form-control" placeholder="escriba un nombre" [(ngModel)]="pagina.nombre">
-                                        <small class="form-control-feedback">&nbsp;</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="row">
-                                    <label class="control-label text-md-right col-md-2">Url</label>
-                                    <div class="col-md-10">
-                                        <input #txtUrl type="text" name="url" class="form-control" placeholder="escriba una llave" [(ngModel)]="pagina.url">
-                                        <small class="form-control-feedback">&nbsp;</small>
-                                    </div>
+
+                        <h3 class="card-title">Acciones</h3>
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Llave</th>
+                                        <th>Orden</th>
+                                        <th class="text-nowrap text-center">Acci&oacute;n</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <input type="text" class="form-control" value="Ver">
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control" value="Ver">
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control" value="1">
+                                        </td>
+                                        <td class="text-nowrap text-center">
+                                            <button type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i> Eliminar</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="text" class="form-control" value="Grabar">
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control" value="Grabar">
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control" value="2">
+                                        </td>
+                                        <td class="text-nowrap text-center">
+                                            <button type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i> Eliminar</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="text" class="form-control" value="">
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control" value="">
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control" value="">
+                                        </td>
+                                        <td class="text-nowrap text-center">
+                                            <button type="button" class="btn btn-success btn-sm"><i class="fa fa-plus"></i> Agregar</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <hr class="m-t-40">
+                        <div class="form-actions text-right">
+                            <div class="row">
+                                <div class="col-12">
+                                    <button type="button" class="btn btn-secondary" [routerLink]="['/pagina/adm-pagina-listado']"> <i class="fa fa-times"></i> Cancelar</button>
+                                    <button type="submit" class="btn btn-success font-weight-bold" [routerLink]="['/pagina/adm-pagina-listado']"> <i class="fa fa-save"></i> Guardar</button>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <hr>
-                    <div class="form-actions text-right">
-                        <div class="row">
-                            <div class="col-12">
-                                <button type="button" class="btn btn-secondary" [routerLink]="['/pagina/adm-pagina-listado']"> <i class="fa fa-times"></i> Cancelar</button>
-                                <button type="submit" class="btn btn-success font-weight-bold" [routerLink]="['/pagina/adm-pagina-listado']"> <i class="fa fa-save"></i> Guardar</button>
-                            </div>
-                        </div>
+
                     </div>
                 </form>
             </div>

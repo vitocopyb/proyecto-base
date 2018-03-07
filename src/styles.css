@@ -1,3 +1,7 @@
 #themecolors a {
     cursor: pointer;
 }
+
+.sist-cursor-pointer {
+    cursor: pointer;
+}

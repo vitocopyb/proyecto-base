@@ -24,6 +24,189 @@ export class UsuarioService {
         { idUsuario: 10, idRol: 1, nombre: 'Nombre Usuario 10', paterno: 'Paterno', materno: 'Materno', username: 'username', password: 'xyz', tipoIdentificacion: 'RUT', identificacion: '123-6', telefono: '987654321', email: 'test@vsr.cl', activo: true }
     ];
 
+    private listadoPermisos: any = [
+        {
+            nombreCategoria: 'Sistema',
+            paginas: [
+                {
+                    nombrePagina: 'Rol listado',
+                    acciones: [
+                        { nombre: 'Ver', seleccionado: true },
+                        { nombre: 'Crear', seleccionado: true },
+                        { nombre: 'Actualizar', seleccionado: false },
+                        { nombre: 'Eliminar', seleccionado: false },
+                    ]
+                },
+                {
+                    nombrePagina: 'Rol detalle',
+                    acciones: [
+                        { nombre: 'Ver', seleccionado: true },
+                        { nombre: 'Crear', seleccionado: true },
+                        { nombre: 'Actualizar', seleccionado: false },
+                        { nombre: 'Eliminar', seleccionado: false },
+                    ]
+                },
+                {
+                    nombrePagina: 'Página Categoría listado',
+                    acciones: [
+                        { nombre: 'Ver', seleccionado: true },
+                        { nombre: 'Crear', seleccionado: true },
+                        { nombre: 'Actualizar', seleccionado: false },
+                        { nombre: 'Eliminar', seleccionado: false },
+                    ]
+                },
+                {
+                    nombrePagina: 'Página Categoría detalle',
+                    acciones: [
+                        { nombre: 'Ver', seleccionado: true },
+                        { nombre: 'Crear', seleccionado: true },
+                        { nombre: 'Actualizar', seleccionado: false },
+                        { nombre: 'Eliminar', seleccionado: false },
+                    ]
+                },
+                {
+                    nombrePagina: 'Página listado',
+                    acciones: [
+                        { nombre: 'Ver', seleccionado: true },
+                        { nombre: 'Crear', seleccionado: true },
+                        { nombre: 'Actualizar', seleccionado: false },
+                        { nombre: 'Eliminar', seleccionado: false },
+                    ]
+                },
+                {
+                    nombrePagina: 'Página detalle',
+                    acciones: [
+                        { nombre: 'Ver', seleccionado: true },
+                        { nombre: 'Crear', seleccionado: true },
+                        { nombre: 'Actualizar', seleccionado: false },
+                        { nombre: 'Eliminar', seleccionado: false },
+                    ]
+                }
+                
+            ]
+        },
+        {
+            nombreCategoria: 'Facturación',
+            paginas: [
+                {
+                    nombrePagina: 'Rol listado',
+                    acciones: [
+                        { nombre: 'Ver', seleccionado: true },
+                        { nombre: 'Crear', seleccionado: true },
+                        { nombre: 'Actualizar', seleccionado: false },
+                        { nombre: 'Eliminar', seleccionado: false },
+                    ]
+                },
+                {
+                    nombrePagina: 'Rol detalle',
+                    acciones: [
+                        { nombre: 'Ver', seleccionado: true },
+                        { nombre: 'Crear', seleccionado: true },
+                        { nombre: 'Actualizar', seleccionado: false },
+                        { nombre: 'Eliminar', seleccionado: false },
+                    ]
+                },
+                {
+                    nombrePagina: 'Página Categoría listado',
+                    acciones: [
+                        { nombre: 'Ver', seleccionado: true },
+                        { nombre: 'Crear', seleccionado: true },
+                        { nombre: 'Actualizar', seleccionado: false },
+                        { nombre: 'Eliminar', seleccionado: false },
+                    ]
+                },
+                {
+                    nombrePagina: 'Página Categoría detalle',
+                    acciones: [
+                        { nombre: 'Ver', seleccionado: true },
+                        { nombre: 'Crear', seleccionado: true },
+                        { nombre: 'Actualizar', seleccionado: false },
+                        { nombre: 'Eliminar', seleccionado: false },
+                    ]
+                },
+                {
+                    nombrePagina: 'Página listado',
+                    acciones: [
+                        { nombre: 'Ver', seleccionado: true },
+                        { nombre: 'Crear', seleccionado: true },
+                        { nombre: 'Actualizar', seleccionado: false },
+                        { nombre: 'Eliminar', seleccionado: false },
+                    ]
+                },
+                {
+                    nombrePagina: 'Página detalle',
+                    acciones: [
+                        { nombre: 'Ver', seleccionado: true },
+                        { nombre: 'Crear', seleccionado: true },
+                        { nombre: 'Actualizar', seleccionado: false },
+                        { nombre: 'Eliminar', seleccionado: false },
+                    ]
+                }
+                
+            ]
+        },
+        {
+            nombreCategoria: 'Geografía',
+            paginas: [
+                {
+                    nombrePagina: 'Rol listado',
+                    acciones: [
+                        { nombre: 'Ver', seleccionado: true },
+                        { nombre: 'Crear', seleccionado: true },
+                        { nombre: 'Actualizar', seleccionado: false },
+                        { nombre: 'Eliminar', seleccionado: false },
+                    ]
+                },
+                {
+                    nombrePagina: 'Rol detalle',
+                    acciones: [
+                        { nombre: 'Ver', seleccionado: true },
+                        { nombre: 'Crear', seleccionado: true },
+                        { nombre: 'Actualizar', seleccionado: false },
+                        { nombre: 'Eliminar', seleccionado: false },
+                    ]
+                },
+                {
+                    nombrePagina: 'Página Categoría listado',
+                    acciones: [
+                        { nombre: 'Ver', seleccionado: true },
+                        { nombre: 'Crear', seleccionado: true },
+                        { nombre: 'Actualizar', seleccionado: false },
+                        { nombre: 'Eliminar', seleccionado: false },
+                    ]
+                },
+                {
+                    nombrePagina: 'Página Categoría detalle',
+                    acciones: [
+                        { nombre: 'Ver', seleccionado: true },
+                        { nombre: 'Crear', seleccionado: true },
+                        { nombre: 'Actualizar', seleccionado: false },
+                        { nombre: 'Eliminar', seleccionado: false },
+                    ]
+                },
+                {
+                    nombrePagina: 'Página listado',
+                    acciones: [
+                        { nombre: 'Ver', seleccionado: true },
+                        { nombre: 'Crear', seleccionado: true },
+                        { nombre: 'Actualizar', seleccionado: false },
+                        { nombre: 'Eliminar', seleccionado: false },
+                    ]
+                },
+                {
+                    nombrePagina: 'Página detalle',
+                    acciones: [
+                        { nombre: 'Ver', seleccionado: true },
+                        { nombre: 'Crear', seleccionado: true },
+                        { nombre: 'Actualizar', seleccionado: false },
+                        { nombre: 'Eliminar', seleccionado: false },
+                    ]
+                }
+                
+            ]
+        }              
+    ];    
+
     constructor( @Inject(DOCUMENT) private _document, private _constantes: Constantes ) {
         this.cargarTema();
     }
@@ -57,4 +240,8 @@ export class UsuarioService {
         return this.listadoUsuarios[0];
     }
 
+    obtenerPermisos(): any[] {
+        return this.listadoPermisos;
+    }
+    
 }
