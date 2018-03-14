@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 // Rutas
 import { ROL_ROUTES } from './rol.routes';
@@ -16,6 +17,8 @@ import { AdmRolDetalleComponent } from './components/adm-rol-detalle.component';
     imports: [
         CommonModule,
         FormsModule,
+        HttpClientModule,
+        ReactiveFormsModule,
         ROL_ROUTES
     ],
     declarations: [

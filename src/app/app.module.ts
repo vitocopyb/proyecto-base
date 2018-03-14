@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import 'rxjs/add/operator/filter';
-import 'rxjs/add/operator/map'
+import 'rxjs/add/operator/map';
 
 // temporal
 import { FormsModule } from '@angular/forms';
@@ -18,7 +18,6 @@ import { UsuarioModule } from './modulos/usuario/usuario.module';
 // Componentes
 import { AppComponent } from './app.component';
 import { LoginComponent } from './modulos/login/login.component';
-import { Constantes } from './comun/utilities/constantes';
 
 @NgModule({
     declarations: [
@@ -35,7 +34,6 @@ import { Constantes } from './comun/utilities/constantes';
         UsuarioModule
     ],
     providers: [
-        Constantes
     ],
     bootstrap: [AppComponent]
 })

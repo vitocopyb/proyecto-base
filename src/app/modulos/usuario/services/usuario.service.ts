@@ -1,14 +1,14 @@
 import { Injectable, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
 import { IConfiguracion, IUsuario } from '../interfaces/usuario.interface';
-import { Constantes } from '../../../comun/utilities/constantes';
+import { CONSTANTES } from '../../../comun/utilities/constantes';
 
 @Injectable()
 export class UsuarioService {
 
     configuracion: IConfiguracion = {
-        tema: this._constantes.TEMA_COLOR_DEFAULT,
-        temaUrl: this._constantes.TEMA_URL
+        tema: CONSTANTES.TEMA_COLOR_DEFAULT,
+        temaUrl: CONSTANTES.TEMA_URL
     }
 
     private listadoUsuarios: IUsuario[] = [
@@ -207,13 +207,13 @@ export class UsuarioService {
         }              
     ];    
 
-    constructor( @Inject(DOCUMENT) private _document, private _constantes: Constantes ) {
+    constructor( @Inject(DOCUMENT) private _document ) {
         this.cargarTema();
     }
 
     cargarTema() {
-        if ( localStorage.getItem(this._constantes.KEY_STORAGE_CONFIGURACION) ) {
-            this.configuracion = JSON.parse( localStorage.getItem(this._constantes.KEY_STORAGE_CONFIGURACION) );
+        if ( localStorage.getItem(CONSTANTES.KEY_STORAGE_CONFIGURACION) ) {
+            this.configuracion = JSON.parse( localStorage.getItem(CONSTANTES.KEY_STORAGE_CONFIGURACION) );
         }
 
         this.aplicarTema( this.configuracion.tema );
@@ -229,7 +229,7 @@ export class UsuarioService {
     }
 
     guardarTema() {
-        localStorage.setItem(this._constantes.KEY_STORAGE_CONFIGURACION, JSON.stringify( this.configuracion ));
+        localStorage.setItem(CONSTANTES.KEY_STORAGE_CONFIGURACION, JSON.stringify( this.configuracion ));
     }
 
     obtenerUsuarios(): IUsuario[] {

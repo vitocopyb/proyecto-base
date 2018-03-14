@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import * as swal from 'sweetalert';
 
 // todo **
 import { ScriptLoaderService } from '../../../comun/services/script-loader.service';
@@ -12,15 +15,28 @@ import { RolService } from '../services/rol.service';
 })
 export class AdmRolDetalleComponent implements OnInit {
 
+    formulario: FormGroup;
     titulo: string = 'Nuevo Rol';
-    idRegistro: string = '';
+    subtitulo: string = '';
     rol: IRol = {
         idRol: -1,
         nombre: '',
         llave: ''
     };
+    paramId: number = -1;
 
-    constructor( private _scriptLoader: ScriptLoaderService, private _rolService: RolService ) { }
+    constructor(
+        private _scriptLoader: ScriptLoaderService,
+        private _rolService: RolService,
+        private activedRoute: ActivatedRoute,
+        private router: Router
+    ) {
+        // obtiene los parametros
+        this.activedRoute.params
+            .subscribe( parametros => {
+                this.paramId = Number.parseInt(parametros['id'], 10);
+            });
+    }
 
     ngOnInit() {
         this._scriptLoader
@@ -29,14 +45,69 @@ export class AdmRolDetalleComponent implements OnInit {
             })
             .catch(error => console.log(error));
 
-        // obtiene detalle
-        this.rol = this._rolService.obtenerDetalleRol(1);
+        // inicia los campos que se van a manejar desde el formulario html
+        this.formulario = new FormGroup({
+            idRol: new FormControl(),
+            nombre: new FormControl('', Validators.required),
+            llave: new FormControl('', Validators.required)
+        });
 
-        // cambia el titulo
-        if (this.rol.idRol !== -1) {
-            this.titulo = this.rol.nombre;
-            this.idRegistro = `(ID: ${this.rol.idRol})`;
+        // obtiene detalle
+        if ( this.paramId !== -1 ) {
+            this._rolService.obtenerDetalleRol(this.paramId)
+                .subscribe( (resp: any ) => {
+                    // actualiza controles del formulario
+                    this.rol = resp;
+                    this.formulario.setValue(this.rol);
+
+                    // cambia el titulo
+                    this.titulo = this.rol.nombre;
+                    this.subtitulo = `(ID: ${this.rol.idRol})`;
+                });
         }
+    }
+
+    guardarRol() {
+        // si el formalurio es invalido, detiene el proceso
+        if ( this.formulario.invalid ) {
+            swal('Error', 'Revise los datos del formulario', 'error');
+            return;
+        }
+
+        // setea valores para enviarlos
+        this.rol.idRol = Number.parseInt(this.rol.idRol.toString(), 10);
+        this.rol.nombre = this.formulario.value.nombre;
+        this.rol.llave = this.formulario.value.llave;
+
+        if ( this.rol.idRol === -1) {
+            this._rolService.crearRol( this.rol )
+                .subscribe( resp => {
+                    this.router.navigate(['/rol/adm-rol-listado']);
+                });
+        } else {
+            this._rolService.actualizarRol( this.rol )
+                .subscribe( resp => {
+                    this.router.navigate(['/rol/adm-rol-listado']);
+                });
+        }
+    }
+
+    eliminarRol( idRol: number ) {
+        swal({
+            title: 'Eliminar Rol',
+            text: '¿Seguro que desea eliminar el registro?',
+            icon: 'warning',
+            buttons: ['Cancelar', 'Eliminar'],
+            dangerMode: true
+        })
+        .then((confirmacion) => {
+            if (confirmacion) {
+                this._rolService.eliminarRol(idRol)
+                    .subscribe( resp => {
+                        this.router.navigate(['/rol/adm-rol-listado']);
+                    });
+            }
+        });
     }
 
 }
