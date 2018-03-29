@@ -3,9 +3,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
-// Rutas
-import { USUARIO_ROUTES } from './usuario.routes';
-
 // Servicios
 import { UsuarioService } from './services/usuario.service';
 
@@ -18,20 +15,16 @@ import { AdmUsuarioDetalleComponent } from './components/adm-usuario-detalle.com
     imports: [
         CommonModule,
         FormsModule,
-        RouterModule,
-        USUARIO_ROUTES
+        RouterModule
     ],
     declarations: [
         AdmUsuarioConfiguracionComponent,
         AdmUsuarioListadoComponent,
         AdmUsuarioDetalleComponent
     ],
+    exports: [],
     providers: [
         UsuarioService
     ],
-    exports: [
-        RouterModule
-    ]
-    
 })
 export class UsuarioModule { }

@@ -3524,7 +3524,7 @@ Form Pickers
 }
 
 table th {
-    font-weight: 400;
+    font-weight: bold;
 }
 
 .daterangepicker td.active,
@@ -5365,7 +5365,7 @@ Table Cell
 
 .table thead th,
 .table th {
-    font-weight: 500;
+    font-weight: bold;
 }
 
 .table-hover tbody tr:hover {

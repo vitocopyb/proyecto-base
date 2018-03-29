@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
-// Rutas
-import { PAGINA_ROUTES } from './pagina.routes';
+import { RouterModule } from '@angular/router';
 
 // Servicios
 import { PaginaService } from './services/pagina.service';
@@ -18,7 +16,7 @@ import { AdmPaginaCategoriaDetalleComponent } from './components/adm-pagina-cate
     imports: [
         CommonModule,
         FormsModule,
-        PAGINA_ROUTES
+        RouterModule
     ],
     declarations: [
         AdmPaginaListadoComponent,
@@ -26,7 +24,6 @@ import { AdmPaginaCategoriaDetalleComponent } from './components/adm-pagina-cate
         AdmPaginaCategoriaListadoComponent,
         AdmPaginaCategoriaDetalleComponent
     ],
-    // export se utiliza para exponer los modulos que se pueden utilizar desde otro lado que no sea dentro de RolModule
     exports: [],
     providers: [
         PaginaService

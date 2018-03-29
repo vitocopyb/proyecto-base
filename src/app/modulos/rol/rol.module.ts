@@ -2,9 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
-// Rutas
-import { ROL_ROUTES } from './rol.routes';
+import { RouterModule } from '@angular/router';
 
 // Servicios
 import { RolService } from './services/rol.service';
@@ -19,13 +17,12 @@ import { AdmRolDetalleComponent } from './components/adm-rol-detalle.component';
         FormsModule,
         HttpClientModule,
         ReactiveFormsModule,
-        ROL_ROUTES
+        RouterModule
     ],
     declarations: [
         AdmRolListadoComponent,
         AdmRolDetalleComponent
     ],
-    // export se utiliza para exponer los modulos que se pueden utilizar desde otro lado que no sea dentro de RolModule
     exports: [],
     providers: [
         RolService

@@ -2,49 +2,41 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
-// Rutas
-import { COMUN_ROUTES } from './comun.routes';
+// Guardianes
+import { AuthGuard } from './guards/auth.guard';
 
 // Servicios
 import { ScriptLoaderService } from './services/script-loader.service';
 import { SidebarService } from './services/sidebar.service';
 
 // Componentes
-import { AdmPagesComponent } from './components/adm-pages.component';
-import { AdmDashboardComponent } from './components/adm-dashboard.component';
 import { AdmSidebarComponent } from './components/adm-sidebar.component';
 import { AdmHeaderComponent } from './components/adm-header.component';
 import { AdmBreadcrumbsComponent } from './components/adm-breadcrumbs.component';
 import { AdmFooterComponent } from './components/adm-footer.component';
-import { PageNotFoundComponent } from './components/page-not-found.component';
 
 @NgModule({
     declarations: [
-        AdmPagesComponent,
-        AdmDashboardComponent,
         AdmSidebarComponent,
         AdmHeaderComponent,
         AdmBreadcrumbsComponent,
-        AdmFooterComponent,
-        PageNotFoundComponent
+        AdmFooterComponent
     ],
     imports: [
         CommonModule,
-        RouterModule,
-        COMUN_ROUTES
+        RouterModule
     ],
     // export se utiliza para exponer los modulos que se pueden utilizar desde otro lado que no sea dentro de RolModule
     exports: [
-        AdmDashboardComponent,
         AdmSidebarComponent,
         AdmHeaderComponent,
         AdmBreadcrumbsComponent,
-        AdmFooterComponent,
-        PageNotFoundComponent
+        AdmFooterComponent
     ],
     providers: [
         ScriptLoaderService,
-        SidebarService
+        SidebarService,
+        AuthGuard
     ]
 })
 export class ComunModule { }

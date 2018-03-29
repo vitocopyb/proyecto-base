@@ -2,7 +2,11 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-                <h3 class="card-title"><span class="lstick"></span>{{ titulo }} <small>{{ idRegistro }}</small>
+                <h3 class="card-title">
+                    <span class="lstick"></span>{{ titulo }} <small>{{ subtitulo }}</small>
+                    <div class="pull-right">
+                        <button type="button" class="btn btn-danger btn-sm" (click)="eliminarCategoria(categoria)"> <i class="fa fa-trash-o"></i> Eliminar</button>
+                    </div>
                 </h3>
                 <form action="#" class="form-horizontal">
                     <div class="form-body">

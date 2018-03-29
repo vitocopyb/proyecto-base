@@ -35,13 +35,12 @@ export class AdmRolListadoComponent implements OnInit, OnDestroy {
     obtenerRoles() {
         this._rolService.obtenerRoles()
             .subscribe( (resp: any) => {
-                console.log(resp);
-                this.listadoRoles = resp.roles;
-                this.totalRegistros = resp.total;
+                this.listadoRoles = resp.data.roles;
+                this.totalRegistros = resp.data.total;
             });
     }
 
-    eliminarRol( idRol: number ) {
+    eliminarRol(rol: IRol) {
         swal({
             title: 'Eliminar Rol',
             text: '¿Seguro que desea eliminar el registro?',
@@ -51,7 +50,7 @@ export class AdmRolListadoComponent implements OnInit, OnDestroy {
         })
         .then((confirmacion) => {
             if (confirmacion) {
-                this._rolService.eliminarRol(idRol)
+                this._rolService.eliminarRol(rol)
                     .subscribe( resp => {
                         console.log('eliminado', resp);
                         this.obtenerRoles();

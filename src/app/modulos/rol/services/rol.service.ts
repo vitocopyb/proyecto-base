@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { IRol } from '../interfaces/rol.interface';
 import { CONSTANTES } from '../../../comun/utilities/constantes';
 
@@ -14,7 +14,7 @@ export class RolService {
     obtenerRoles() {
         return this.http.get( this.urlServicio )
                     .map( (resp: any) => {
-                        this.listadoRoles = resp.roles;
+                        this.listadoRoles = resp.data.roles;
                         return resp;
                     });
     }
@@ -27,7 +27,7 @@ export class RolService {
     crearRol( rol: IRol ) {
         return this.http.post( this.urlServicio, rol )
                     .map( (resp: any) => {
-                        swal('Rol creado', resp.mensaje, 'success');
+                        swal(rol.nombre + ' creado', resp.message, 'success');
                         return resp;
                     });
     }
@@ -36,17 +36,16 @@ export class RolService {
         const url = `${this.urlServicio}/${ rol.idRol }`;
         return this.http.put( url, rol )
                     .map( (resp: any) => {
-                        // swal('Rol actualizado', resp.mensaje, 'success');
-                        swal('Rol actualizado', rol.nombre, 'success');
+                        swal(rol.nombre + ' actualizado', resp.message, 'success');
                         return resp;
                     });
     }
 
-    eliminarRol(idRol: number) {
-        const url = `${this.urlServicio}/${ idRol }`;
+    eliminarRol( rol: IRol ) {
+        const url = `${this.urlServicio}/${ rol.idRol }`;
         return this.http.delete( url )
                     .map( (resp: any) => {
-                        swal('Rol eliminado', resp.message, 'success');
+                        swal(rol.nombre + ' eliminado', resp.message, 'success');
                         return resp;
                     });
     }

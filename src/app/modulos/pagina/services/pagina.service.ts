@@ -40,5 +40,5 @@ export class PaginaService {
     obtenerDetalleCategoria(idPaginaCategoria: number): IPaginaCategoria {
         return this.listadoCategorias[0];
     }
-    
+
 }

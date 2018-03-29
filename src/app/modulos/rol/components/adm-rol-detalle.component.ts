@@ -57,7 +57,7 @@ export class AdmRolDetalleComponent implements OnInit {
             this._rolService.obtenerDetalleRol(this.paramId)
                 .subscribe( (resp: any ) => {
                     // actualiza controles del formulario
-                    this.rol = resp;
+                    this.rol = resp.data.rol;
                     this.formulario.setValue(this.rol);
 
                     // cambia el titulo
@@ -92,7 +92,7 @@ export class AdmRolDetalleComponent implements OnInit {
         }
     }
 
-    eliminarRol( idRol: number ) {
+    eliminarRol(rol: IRol ) {
         swal({
             title: 'Eliminar Rol',
             text: '¿Seguro que desea eliminar el registro?',
@@ -102,7 +102,7 @@ export class AdmRolDetalleComponent implements OnInit {
         })
         .then((confirmacion) => {
             if (confirmacion) {
-                this._rolService.eliminarRol(idRol)
+                this._rolService.eliminarRol(rol)
                     .subscribe( resp => {
                         this.router.navigate(['/rol/adm-rol-listado']);
                     });

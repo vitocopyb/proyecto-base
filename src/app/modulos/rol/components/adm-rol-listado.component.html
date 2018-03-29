@@ -6,14 +6,21 @@
                 <form action="#">
                     <div class="form-body">
                         <div class="row p-t-10">
-                            <div class="col-md-6">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="control-label">ID</label>
+                                    <input type="text" id="txtId" class="form-control" placeholder="escriba un texto">
+                                    <small class="form-control-feedback">&nbsp;</small>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="control-label">Nombre</label>
                                     <input type="text" id="txtNombre" class="form-control" placeholder="escriba un texto">
                                     <small class="form-control-feedback"> This is inline help </small>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="control-label">Llave</label>
                                     <input type="text" id="txtLlave" class="form-control" placeholder="escriba un texto">
@@ -38,7 +45,7 @@
                 <h4 class="card-title">Resultado de la b&uacute;squeda</h4>
                 <h6 class="card-subtitle">Total de registros: {{ totalRegistros }}</h6>
                 <div class="table-responsive m-t-20">
-                    <table id="myTable" class="table table-bordered table-striped">
+                    <table id="myTable" class="table table-hover">
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -55,7 +62,7 @@
                                 <td>{{ rol.llave }}</td>
                                 <td class="text-nowrap text-center">
                                     <button type="button" class="btn btn-success btn-sm" [routerLink]="['/rol/adm-rol-detalle', rol.idRol]"><i class="fa fa-pencil"></i> Editar</button>
-                                    <button type="button" class="btn btn-danger btn-sm" (click)="eliminarRol( rol.idRol )"><i class="fa fa-trash-o"></i> Eliminar</button>
+                                    <button type="button" class="btn btn-danger btn-sm" (click)="eliminarRol(rol)"><i class="fa fa-trash-o"></i> Eliminar</button>
                                 </td>
                             </tr>
                             <!-- end ngFor: roles -->

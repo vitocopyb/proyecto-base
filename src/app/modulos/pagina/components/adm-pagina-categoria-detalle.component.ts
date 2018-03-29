@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { IPaginaCategoria } from '../interfaces/pagina.interface';
 import { PaginaService } from '../services/pagina.service';
 
@@ -9,8 +10,9 @@ import { PaginaService } from '../services/pagina.service';
 })
 export class AdmPaginaCategoriaDetalleComponent implements OnInit {
 
+    formulario: FormGroup;
     titulo: string = 'Nueva Categoría';
-    idRegistro: string = '';
+    subtitulo: string = '';
     categoria: IPaginaCategoria = {
         idPaginaCategoria: -1,
         nombre: '',
@@ -18,7 +20,7 @@ export class AdmPaginaCategoriaDetalleComponent implements OnInit {
         activo: true
     };
 
-    constructor( private _paginaService: PaginaService ) { }
+    constructor(private _paginaService: PaginaService) { }
 
     ngOnInit() {
         // obtiene detalle
@@ -27,8 +29,12 @@ export class AdmPaginaCategoriaDetalleComponent implements OnInit {
         // cambia el titulo
         if (this.categoria.idPaginaCategoria !== -1) {
             this.titulo = this.categoria.nombre;
-            this.idRegistro = `(ID: ${this.categoria.idPaginaCategoria})`;
+            this.subtitulo = `(ID: ${this.categoria.idPaginaCategoria})`;
         }
+    }
+
+    eliminarCategoria(categoria: IPaginaCategoria) {
+
     }
 
 }

@@ -5,7 +5,7 @@
                 <h3 class="card-title">
                     <span class="lstick"></span>{{ titulo }} <small>{{ subtitulo }}</small>
                     <div class="pull-right">
-                        <button type="button" class="btn btn-danger btn-sm" (click)="eliminarRol(rol.idRol)"> <i class="fa fa-trash-o"></i> Eliminar</button>
+                        <button type="button" class="btn btn-danger btn-sm" (click)="eliminarRol(rol)"> <i class="fa fa-trash-o"></i> Eliminar</button>
                     </div>
                 </h3>
                 <form [formGroup]="formulario" (ngSubmit)="guardarRol()" action="#" class="form-horizontal">

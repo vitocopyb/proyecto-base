@@ -10,14 +10,11 @@ import { FormsModule } from '@angular/forms';
 import { APP_ROUTES } from './app.routes';
 
 // Modulos
-import { ComunModule } from './comun/comun.module';
-import { RolModule } from './modulos/rol/rol.module';
-import { PaginaModule } from './modulos/pagina/pagina.module';
-import { UsuarioModule } from './modulos/usuario/usuario.module';
+import { PagesModule } from './modulos/pages.module';
 
 // Componentes
 import { AppComponent } from './app.component';
-import { LoginComponent } from './modulos/login/login.component';
+import { LoginComponent } from './modulos/login/components/login.component';
 
 @NgModule({
     declarations: [
@@ -28,13 +25,10 @@ import { LoginComponent } from './modulos/login/login.component';
         BrowserModule,
         FormsModule,
         APP_ROUTES,
-        ComunModule,
-        RolModule,
-        PaginaModule,
-        UsuarioModule
+        PagesModule
     ],
-    providers: [
-    ],
+    providers: [],
     bootstrap: [AppComponent]
 })
+
 export class AppModule { }
