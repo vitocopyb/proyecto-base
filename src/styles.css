@@ -1,7 +1,7 @@
-#themecolors a {
+.sist-cursor-pointer {
     cursor: pointer;
 }
 
-.sist-cursor-pointer {
-    cursor: pointer;
+.sist-width-200 {
+    width: 200px;
 }

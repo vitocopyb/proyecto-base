@@ -26,10 +26,10 @@ export class AdmRolDetalleComponent implements OnInit {
     paramId: number = -1;
 
     constructor(
-        private _scriptLoader: ScriptLoaderService,
-        private _rolService: RolService,
         private activedRoute: ActivatedRoute,
-        private router: Router
+        private router: Router,
+        private _scriptLoader: ScriptLoaderService,
+        private _rolService: RolService
     ) {
         // obtiene los parametros
         this.activedRoute.params

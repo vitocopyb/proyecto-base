@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+
+// Pipes
+import { PipesModule } from './../../comun/pipes/pipes.module';
 
 // Servicios
 import { PaginaService } from './services/pagina.service';
@@ -16,7 +19,9 @@ import { AdmPaginaCategoriaDetalleComponent } from './components/adm-pagina-cate
     imports: [
         CommonModule,
         FormsModule,
-        RouterModule
+        RouterModule,
+        ReactiveFormsModule,
+        PipesModule
     ],
     declarations: [
         AdmPaginaListadoComponent,

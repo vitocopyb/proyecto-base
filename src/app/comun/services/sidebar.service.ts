@@ -8,9 +8,8 @@ export class SidebarService {
           icono: 'mdi mdi-gauge',
           submenu: [
               { titulo: 'Dashboard', url: '/adm-dashboard' },
-              { titulo: 'Rol - Listado', url: '/rol/adm-rol-listado' },
-              { titulo: 'Página - Categoría - Listado', url: '/pagina/adm-pagina-categoria-listado' },
-              { titulo: 'Página - Categoría - Detalle', url: '/pagina/adm-pagina-categoria-detalle' },
+              { titulo: 'Roles', url: '/rol/adm-rol-listado' },
+              { titulo: 'Categorías páginas', url: '/pagina/adm-pagina-categoria-listado' },
               { titulo: 'Página - Listado', url: '/pagina/adm-pagina-listado' },
               { titulo: 'Página - Detalle', url: '/pagina/adm-pagina-detalle' },
               { titulo: 'Usuario - Listado', url: '/usuario/adm-usuario-listado' },

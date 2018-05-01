@@ -30,5 +30,5 @@ export class LoginComponent implements OnInit, OnDestroy {
     ingresar() {
         this.router.navigate(['/adm-dashboard']);
     }
-    
+
 }

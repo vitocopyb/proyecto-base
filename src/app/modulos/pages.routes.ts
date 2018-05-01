@@ -34,7 +34,7 @@ const pagesRoutes: Routes = [
             { path: 'pagina/adm-pagina-listado', component: AdmPaginaListadoComponent, data: { titulo: 'Páginas' } },
             { path: 'pagina/adm-pagina-detalle', component: AdmPaginaDetalleComponent, data: { titulo: 'Página Detalle' } },
             { path: 'pagina/adm-pagina-categoria-listado', component: AdmPaginaCategoriaListadoComponent, data: { titulo: 'Categorías' } },
-            { path: 'pagina/adm-pagina-categoria-detalle', component: AdmPaginaCategoriaDetalleComponent, data: { titulo: 'Categoría Detalle' } },
+            { path: 'pagina/adm-pagina-categoria-detalle/:id', component: AdmPaginaCategoriaDetalleComponent, data: { titulo: 'Categoría Detalle' } },
 
             // Usuario
             { path: 'usuario/adm-usuario-configuracion', component: AdmUsuarioConfiguracionComponent, data: { titulo: 'Configuración' } },
